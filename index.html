@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    //****************** get request******************
+    /* function getData() {
+      console.log("Starting the process");
+      url = "https://api.github.com/users";
+      fetch(url)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+        });
+    }
+    getData(); */
+
+    //************** post request***************
+
+    function postData() {
+      url = "http://dummy.restapiexample.com/api/v1/create";
+      data = '{"name":"abaad" ,"salary":"123", "age":"23"}';
+      params = {
+        method: "post",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: data, // if data is a obj then use stringify
+        //if data is not a string then don't use stringify
+      };
+
+      fetch(url, params)
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+    }
+    postData();
+  </script>
+  <body>
+    <div style="text-align: center">
+      <h2>Fetch api in javaScript</h2>
+      <p>Inspect the page to see magic 😆 lol</p>
+    </div>
+  </body>
+</html>
